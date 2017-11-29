@@ -1,0 +1,3256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Graphic User Interface &mdash; Fantasy Genre Extractor 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Fantasy Genre Extractor 1.0.0 documentation" href="index.html"/>
+        <link rel="up" title="API Documentation" href="code.html"/>
+        <link rel="next" title="Custom UI Components" href="customui.html"/>
+        <link rel="prev" title="Classification" href="classification.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Fantasy Genre Extractor
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project.html#motivation-and-aims">Motivation and Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#author">Author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#supervisor">Supervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html"><strong>Tutorial</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#application-on-start-up">Application On Start-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#setting-up-the-corpus">Setting Up The Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-the-fantasy-filter">Train The Fantasy Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-sub-genre-classifier">Train Sub Genre Classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#extract-genres-from-text">Extract Genres From Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#step-1-checking-main-genre">Step 1: Checking main genre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#step-2-extracting-main-genre">Step 2: Extracting main genre</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="code.html"><strong>API Documentation</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classification.html">Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classification.html#classifiertype">ClassifierType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classification.html#genreclassifier">GenreClassifier</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Graphic User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-form">Main Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#corpus-form">Corpus Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-genre-form">Main Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sub-genre-form">Sub Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-functions">Module Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="customui.html">Custom UI Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#status-bar">Status Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#logger-widget">Logger Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#console-widget">Console Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Utility Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utilities.html#logging-utility">Logging Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities.html#corpus-utility">Corpus Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities.html#text-sanitisation-utility">Text Sanitisation Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities.html#configuration-utility">Configuration Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utilities.html#file-management-utility">File Management Utility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Fantasy Genre Extractor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="code.html"><strong>API Documentation</strong></a> &raquo;</li>
+      
+    <li>Graphic User Interface</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/gui.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-GUI">
+<span id="graphic-user-interface"></span><h1>Graphic User Interface<a class="headerlink" href="#module-GUI" title="Permalink to this headline">¶</a></h1>
+<p><strong>Contents</strong></p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm" title="GUI.MainForm"><code class="xref py py-obj docutils literal"><span class="pre">MainForm</span></code></a>(master:&nbsp;tkinter.Tk,&nbsp;path,&nbsp;\*\*kwargs)</td>
+<td>The standard GUI screen on which other elements are added</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.CorpusForm" title="GUI.CorpusForm"><code class="xref py py-obj docutils literal"><span class="pre">CorpusForm</span></code></a>(root,&nbsp;\*args,&nbsp;\*\*kargs)</td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainGenreForm" title="GUI.MainGenreForm"><code class="xref py py-obj docutils literal"><span class="pre">MainGenreForm</span></code></a>(root,&nbsp;\*args,&nbsp;\*\*kargs)</td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.SubGenreForm" title="GUI.SubGenreForm"><code class="xref py py-obj docutils literal"><span class="pre">SubGenreForm</span></code></a>(root,&nbsp;\*args,&nbsp;\*\*kargs)</td>
+<td>Summary</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="main-form">
+<h2>Main Form<a class="headerlink" href="#main-form" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GUI.MainForm">
+<em class="property">class </em><code class="descclassname">GUI.</code><code class="descname">MainForm</code><span class="sig-paren">(</span><em>master: tkinter.Tk</em>, <em>path</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>The standard GUI screen on which other elements are added</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>corpusForm</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>mainGenreForm</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>subGenreForm</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">display_class_probability</span></code>(probabity_map:&nbsp;list)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.exit_application" title="GUI.MainForm.exit_application"><code class="xref py py-obj docutils literal"><span class="pre">exit_application</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.extract_naive_genres" title="GUI.MainForm.extract_naive_genres"><code class="xref py py-obj docutils literal"><span class="pre">extract_naive_genres</span></code></a>(bag_of_words)</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.new_file" title="GUI.MainForm.new_file"><code class="xref py py-obj docutils literal"><span class="pre">new_file</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.onClearText" title="GUI.MainForm.onClearText"><code class="xref py py-obj docutils literal"><span class="pre">onClearText</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.onCopy" title="GUI.MainForm.onCopy"><code class="xref py py-obj docutils literal"><span class="pre">onCopy</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.onCut" title="GUI.MainForm.onCut"><code class="xref py py-obj docutils literal"><span class="pre">onCut</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.onEntryFocusIn" title="GUI.MainForm.onEntryFocusIn"><code class="xref py py-obj docutils literal"><span class="pre">onEntryFocusIn</span></code></a>(event)</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.onEntryFocusOut" title="GUI.MainForm.onEntryFocusOut"><code class="xref py py-obj docutils literal"><span class="pre">onEntryFocusOut</span></code></a>(message[,&nbsp;event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.onExtractButtonClick" title="GUI.MainForm.onExtractButtonClick"><code class="xref py py-obj docutils literal"><span class="pre">onExtractButtonClick</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.onFind" title="GUI.MainForm.onFind"><code class="xref py py-obj docutils literal"><span class="pre">onFind</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.onPaste" title="GUI.MainForm.onPaste"><code class="xref py py-obj docutils literal"><span class="pre">onPaste</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.open_file" title="GUI.MainForm.open_file"><code class="xref py py-obj docutils literal"><span class="pre">open_file</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.process_main_genre" title="GUI.MainForm.process_main_genre"><code class="xref py py-obj docutils literal"><span class="pre">process_main_genre</span></code></a>()</td>
+<td>Conduct Fantasy filtering</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainForm.save_as_file" title="GUI.MainForm.save_as_file"><code class="xref py py-obj docutils literal"><span class="pre">save_as_file</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainForm.save_file" title="GUI.MainForm.save_file"><code class="xref py py-obj docutils literal"><span class="pre">save_file</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="GUI.MainForm.exit_application">
+<code class="descname">exit_application</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.exit_application"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.exit_application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.extract_naive_genres">
+<code class="descname">extract_naive_genres</code><span class="sig-paren">(</span><em>bag_of_words</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.extract_naive_genres"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.extract_naive_genres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>bag_of_words</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.new_file">
+<code class="descname">new_file</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.new_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.new_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onClearText">
+<code class="descname">onClearText</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onClearText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onClearText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onCopy">
+<code class="descname">onCopy</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onCopy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onCopy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onCut">
+<code class="descname">onCut</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onCut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onCut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onEntryFocusIn">
+<code class="descname">onEntryFocusIn</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onEntryFocusIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onEntryFocusIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onEntryFocusOut">
+<code class="descname">onEntryFocusOut</code><span class="sig-paren">(</span><em>message</em>, <em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onEntryFocusOut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onEntryFocusOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>message</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onExtractButtonClick">
+<code class="descname">onExtractButtonClick</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onExtractButtonClick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onExtractButtonClick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onFind">
+<code class="descname">onFind</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onFind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onFind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.onPaste">
+<code class="descname">onPaste</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.onPaste"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.onPaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.open_file">
+<code class="descname">open_file</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.open_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.process_main_genre">
+<code class="descname">process_main_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.process_main_genre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.process_main_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conduct Fantasy filtering</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>FileNotFoundError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>FileNotFoundError</strong></p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.save_as_file">
+<code class="descname">save_as_file</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.save_as_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.save_as_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainForm.save_file">
+<code class="descname">save_file</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainForm.save_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainForm.save_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="corpus-form">
+<h2>Corpus Form<a class="headerlink" href="#corpus-form" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GUI.CorpusForm">
+<em class="property">class </em><code class="descclassname">GUI.</code><code class="descname">CorpusForm</code><span class="sig-paren">(</span><em>root</em>, <em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Toplevel</span></code></p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after</span></code>(ms[,&nbsp;func])</td>
+<td>Call function once after given time.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">after_cancel</span></code>(id)</td>
+<td>Cancel scheduling of function identified with ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after_idle</span></code>(func,&nbsp;\*args)</td>
+<td>Call FUNC once if the Tcl main loop has no event to process.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;maxDenom])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bell</span></code>([displayof])</td>
+<td>Ring a display&#8217;s bell.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to this widget at event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_all</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to all widgets at an event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_class</span></code>(className[,&nbsp;sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to widgets with bindtag CLASSNAME at event SEQUENCE a call of function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bindtags</span></code>([tagList])</td>
+<td>Set or get the list of bindtags for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">cget</span></code>(key)</td>
+<td>Return the resource value for a KEY given as string.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_append</span></code>(string,&nbsp;\*\*kw)</td>
+<td>Append STRING to the Tk clipboard.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_clear</span></code>(\*\*kw)</td>
+<td>Clear the data in the Tk clipboard.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_get</span></code>(\*\*kw)</td>
+<td>Retrieve data from the clipboard on window&#8217;s display.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">colormodel</span></code>([value])</td>
+<td>Useless.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">config</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">configure</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">deletecommand</span></code>(name)</td>
+<td>Internal function.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">destroy</span></code>()</td>
+<td>Destroy this and all descendants widgets.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_add</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Bind a virtual event VIRTUAL (of the form &lt;&lt;Name&gt;&gt;) to an event SEQUENCE such that the virtual event is triggered whenever SEQUENCE occurs.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_delete</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Unbind a virtual event VIRTUAL from SEQUENCE.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_generate</span></code>(sequence,&nbsp;\*\*kw)</td>
+<td>Generate an event SEQUENCE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_info</span></code>([virtual])</td>
+<td>Return a list of all virtual events or the information about the SEQUENCE bound to the virtual event VIRTUAL.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_displayof</span></code>()</td>
+<td>Return the widget which has currently the focus on the display where this widget is located.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_force</span></code>()</td>
+<td>Direct input focus to this widget even if the application does not have the focus.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_get</span></code>()</td>
+<td>Return the widget which has currently the focus in the application.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_lastfor</span></code>()</td>
+<td>Return the widget which would have the focus if top level for this widget gets the focus from the window manager.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_set</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getboolean</span></code>(s)</td>
+<td>Return a boolean value for Tcl boolean values true and false given as parameter.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getdouble</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">float</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getint</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">int</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getvar</span></code>([name])</td>
+<td>Return value of Tcl variable NAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_current</span></code>()</td>
+<td>Return widget which has currently the grab in this application or None.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_release</span></code>()</td>
+<td>Release grab for this widget if currently set.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set</span></code>()</td>
+<td>Set grab for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set_global</span></code>()</td>
+<td>Set global grab for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_status</span></code>()</td>
+<td>Return None, &#8220;local&#8221; or &#8220;global&#8221; if this widget has no, a local or a global grab.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_location</span></code>(x,&nbsp;y)</td>
+<td>Return a tuple of column and row which identify the cell at which the pixel at position X and Y inside the master widget is located.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_slaves</span></code>([row,&nbsp;column])</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">image_names</span></code>()</td>
+<td>Return a list of all existing image names.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">image_types</span></code>()</td>
+<td>Return a list of all available image types (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code>()</td>
+<td>Return a list of all resource names of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">lift</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">lower</span></code>([belowThis])</td>
+<td>Lower this widget in the stacking order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">mainloop</span></code>([n])</td>
+<td>Call the mainloop of Tk.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">nametowidget</span></code>(name)</td>
+<td>Return the Tkinter instance of a widget identified by its Tcl name NAME.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.CorpusForm.onBrowse" title="GUI.CorpusForm.onBrowse"><code class="xref py py-obj docutils literal"><span class="pre">onBrowse</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.CorpusForm.onEntryFocusIn" title="GUI.CorpusForm.onEntryFocusIn"><code class="xref py py-obj docutils literal"><span class="pre">onEntryFocusIn</span></code></a>(message[,&nbsp;event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.CorpusForm.onEntryFocusOut" title="GUI.CorpusForm.onEntryFocusOut"><code class="xref py py-obj docutils literal"><span class="pre">onEntryFocusOut</span></code></a>(message[,&nbsp;event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.CorpusForm.onQuit" title="GUI.CorpusForm.onQuit"><code class="xref py py-obj docutils literal"><span class="pre">onQuit</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.CorpusForm.onSaveCorpus" title="GUI.CorpusForm.onSaveCorpus"><code class="xref py py-obj docutils literal"><span class="pre">onSaveCorpus</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.CorpusForm.onSaveToConfig" title="GUI.CorpusForm.onSaveToConfig"><code class="xref py py-obj docutils literal"><span class="pre">onSaveToConfig</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.CorpusForm.onSplitCorpus" title="GUI.CorpusForm.onSplitCorpus"><code class="xref py py-obj docutils literal"><span class="pre">onSplitCorpus</span></code></a>([event])</td>
+<td>Split the main corpus into a training and testing corpus</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_add</span></code>(pattern,&nbsp;value[,&nbsp;priority])</td>
+<td>Set a VALUE (second parameter) for an option PATTERN (first parameter).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_clear</span></code>()</td>
+<td>Clear the option database.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_get</span></code>(name,&nbsp;className)</td>
+<td>Return the value for an option NAME for this widget with CLASSNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_readfile</span></code>(fileName[,&nbsp;priority])</td>
+<td>Read file FILENAME into the option database.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">place_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">quit</span></code>()</td>
+<td>Quit the Tcl interpreter.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">register</span></code>(func[,&nbsp;subst,&nbsp;needcleanup])</td>
+<td>Return a newly created Tcl function.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_clear</span></code>(\*\*kw)</td>
+<td>Clear the current X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_get</span></code>(\*\*kw)</td>
+<td>Return the contents of the current X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_handle</span></code>(command,&nbsp;\*\*kw)</td>
+<td>Specify a function COMMAND to call if the X selection owned by this widget is queried by another application.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own</span></code>(\*\*kw)</td>
+<td>Become owner of X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own_get</span></code>(\*\*kw)</td>
+<td>Return owner of X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">send</span></code>(interp,&nbsp;cmd,&nbsp;\*args)</td>
+<td>Send Tcl command CMD to different interpreter INTERP to be executed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setvar</span></code>([name,&nbsp;value])</td>
+<td>Set Tcl variable NAME to VALUE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_bisque</span></code>()</td>
+<td>Change the color scheme to light brown as used in Tk 3.6 and before.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusFollowsMouse</span></code>()</td>
+<td>The widget under mouse will get automatically focus.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusNext</span></code>()</td>
+<td>Return the next widget in the focus order which follows widget which has currently the focus.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusPrev</span></code>()</td>
+<td>Return previous widget in the focus order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_menuBar</span></code>(\*args)</td>
+<td>Do not use.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_setPalette</span></code>(\*args,&nbsp;\*\*kw)</td>
+<td>Set a new color scheme for all widget elements.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_strictMotif</span></code>([boolean])</td>
+<td>Set Tcl internal variable, whether the look and feel should adhere to Motif.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tkraise</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind</span></code>(sequence[,&nbsp;funcid])</td>
+<td>Unbind for this widget for event SEQUENCE  the function identified with FUNCID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_all</span></code>(sequence)</td>
+<td>Unbind for all widgets for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_class</span></code>(className,&nbsp;sequence)</td>
+<td>Unbind for all widgets with bindtag CLASSNAME for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">update</span></code>()</td>
+<td>Enter event loop until all pending events have been processed by Tcl.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">update_idletasks</span></code>()</td>
+<td>Enter event loop until all idle callbacks have been called.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_variable</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_visibility</span></code>([window])</td>
+<td>Wait until the visibility of a WIDGET changes (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_window</span></code>([window])</td>
+<td>Wait until a WIDGET is destroyed.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">waitvar</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atom</span></code>(name[,&nbsp;displayof])</td>
+<td>Return integer which represents atom NAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atomname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return name of atom with identifier ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_cells</span></code>()</td>
+<td>Return number of cells in the colormap for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_children</span></code>()</td>
+<td>Return a list of all widgets which are children of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_class</span></code>()</td>
+<td>Return window class name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_colormapfull</span></code>()</td>
+<td>Return true if at the last color request the colormap was full.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_containing</span></code>(rootX,&nbsp;rootY[,&nbsp;displayof])</td>
+<td>Return the widget which is at the root coordinates ROOTX, ROOTY.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_depth</span></code>()</td>
+<td>Return the number of bits per pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_exists</span></code>()</td>
+<td>Return true if this widget exists.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_fpixels</span></code>(number)</td>
+<td>Return the number of pixels for the given distance NUMBER (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_geometry</span></code>()</td>
+<td>Return geometry string for this widget in the form &#8220;widthxheight+X+Y&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_height</span></code>()</td>
+<td>Return height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_id</span></code>()</td>
+<td>Return identifier ID for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_interps</span></code>([displayof])</td>
+<td>Return the name of all Tcl interpreters for this display.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_ismapped</span></code>()</td>
+<td>Return true if this widget is mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_manager</span></code>()</td>
+<td>Return the window mananger name for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_name</span></code>()</td>
+<td>Return the name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_parent</span></code>()</td>
+<td>Return the name of the parent of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pathname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return the pathname of the widget given by ID.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pixels</span></code>(number)</td>
+<td>Rounded integer value of winfo_fpixels.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerx</span></code>()</td>
+<td>Return the x coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerxy</span></code>()</td>
+<td>Return a tuple of x and y coordinates of the pointer on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointery</span></code>()</td>
+<td>Return the y coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqheight</span></code>()</td>
+<td>Return requested height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqwidth</span></code>()</td>
+<td>Return requested width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rgb</span></code>(color)</td>
+<td>Return tuple of decimal values for red, green, blue for COLOR in this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rootx</span></code>()</td>
+<td>Return x coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rooty</span></code>()</td>
+<td>Return y coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screen</span></code>()</td>
+<td>Return the screen name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screencells</span></code>()</td>
+<td>Return the number of the cells in the colormap of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screendepth</span></code>()</td>
+<td>Return the number of bits per pixel of the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenvisual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the default colormodel of this screen.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_server</span></code>()</td>
+<td>Return information of the X-Server of the screen of this widget in the form &#8220;XmajorRminor vendor vendorVersion&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_toplevel</span></code>()</td>
+<td>Return the toplevel widget of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_viewable</span></code>()</td>
+<td>Return true if the widget and all its higher ancestors are mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the colormodel of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualid</span></code>()</td>
+<td>Return the X identifier for the visual for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualsavailable</span></code>([includeids])</td>
+<td>Return a list of all visuals available for the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootheight</span></code>()</td>
+<td>Return the height of the virtual root window associated with this widget in pixels.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootwidth</span></code>()</td>
+<td>Return the width of the virtual root window associated with this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootx</span></code>()</td>
+<td>Return the x offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrooty</span></code>()</td>
+<td>Return the y offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_width</span></code>()</td>
+<td>Return the width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_x</span></code>()</td>
+<td>Return the x coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_y</span></code>()</td>
+<td>Return the y coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;...])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="GUI.CorpusForm.onBrowse">
+<code class="descname">onBrowse</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onBrowse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onBrowse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onEntryFocusIn">
+<code class="descname">onEntryFocusIn</code><span class="sig-paren">(</span><em>message</em>, <em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onEntryFocusIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onEntryFocusIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>message</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onEntryFocusOut">
+<code class="descname">onEntryFocusOut</code><span class="sig-paren">(</span><em>message</em>, <em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onEntryFocusOut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onEntryFocusOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>message</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onQuit">
+<code class="descname">onQuit</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onQuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onQuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onSaveCorpus">
+<code class="descname">onSaveCorpus</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onSaveCorpus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onSaveCorpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<p class="last"><strong>Description</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onSaveToConfig">
+<code class="descname">onSaveToConfig</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onSaveToConfig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onSaveToConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.CorpusForm.onSplitCorpus">
+<code class="descname">onSplitCorpus</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#CorpusForm.onSplitCorpus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.CorpusForm.onSplitCorpus" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Split the main corpus into a training and testing corpus</dt>
+<dd>then preprocess the training corpus</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Event</p>
+<blockquote class="last">
+<div><p>Tkinter Event object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="main-genre-form">
+<h2>Main Genre Form<a class="headerlink" href="#main-genre-form" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GUI.MainGenreForm">
+<em class="property">class </em><code class="descclassname">GUI.</code><code class="descname">MainGenreForm</code><span class="sig-paren">(</span><em>root</em>, <em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Toplevel</span></code></p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after</span></code>(ms[,&nbsp;func])</td>
+<td>Call function once after given time.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">after_cancel</span></code>(id)</td>
+<td>Cancel scheduling of function identified with ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after_idle</span></code>(func,&nbsp;\*args)</td>
+<td>Call FUNC once if the Tcl main loop has no event to process.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;maxDenom])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bell</span></code>([displayof])</td>
+<td>Ring a display&#8217;s bell.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to this widget at event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_all</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to all widgets at an event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_class</span></code>(className[,&nbsp;sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to widgets with bindtag CLASSNAME at event SEQUENCE a call of function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bindtags</span></code>([tagList])</td>
+<td>Set or get the list of bindtags for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">cget</span></code>(key)</td>
+<td>Return the resource value for a KEY given as string.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_append</span></code>(string,&nbsp;\*\*kw)</td>
+<td>Append STRING to the Tk clipboard.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_clear</span></code>(\*\*kw)</td>
+<td>Clear the data in the Tk clipboard.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_get</span></code>(\*\*kw)</td>
+<td>Retrieve data from the clipboard on window&#8217;s display.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">colormodel</span></code>([value])</td>
+<td>Useless.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">config</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">configure</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainGenreForm.convert_to_binary_class" title="GUI.MainGenreForm.convert_to_binary_class"><code class="xref py py-obj docutils literal"><span class="pre">convert_to_binary_class</span></code></a>(testing_corpus,&nbsp;...)</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">deletecommand</span></code>(name)</td>
+<td>Internal function.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">destroy</span></code>()</td>
+<td>Destroy this and all descendants widgets.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_add</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Bind a virtual event VIRTUAL (of the form &lt;&lt;Name&gt;&gt;) to an event SEQUENCE such that the virtual event is triggered whenever SEQUENCE occurs.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_delete</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Unbind a virtual event VIRTUAL from SEQUENCE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_generate</span></code>(sequence,&nbsp;\*\*kw)</td>
+<td>Generate an event SEQUENCE.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_info</span></code>([virtual])</td>
+<td>Return a list of all virtual events or the information about the SEQUENCE bound to the virtual event VIRTUAL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_displayof</span></code>()</td>
+<td>Return the widget which has currently the focus on the display where this widget is located.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_force</span></code>()</td>
+<td>Direct input focus to this widget even if the application does not have the focus.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_get</span></code>()</td>
+<td>Return the widget which has currently the focus in the application.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_lastfor</span></code>()</td>
+<td>Return the widget which would have the focus if top level for this widget gets the focus from the window manager.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_set</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getboolean</span></code>(s)</td>
+<td>Return a boolean value for Tcl boolean values true and false given as parameter.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getdouble</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">float</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getint</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">int</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getvar</span></code>([name])</td>
+<td>Return value of Tcl variable NAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_current</span></code>()</td>
+<td>Return widget which has currently the grab in this application or None.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_release</span></code>()</td>
+<td>Release grab for this widget if currently set.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set</span></code>()</td>
+<td>Set grab for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set_global</span></code>()</td>
+<td>Set global grab for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_status</span></code>()</td>
+<td>Return None, &#8220;local&#8221; or &#8220;global&#8221; if this widget has no, a local or a global grab.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_location</span></code>(x,&nbsp;y)</td>
+<td>Return a tuple of column and row which identify the cell at which the pixel at position X and Y inside the master widget is located.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_slaves</span></code>([row,&nbsp;column])</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">image_names</span></code>()</td>
+<td>Return a list of all existing image names.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">image_types</span></code>()</td>
+<td>Return a list of all available image types (e.g.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code>()</td>
+<td>Return a list of all resource names of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">lift</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">lower</span></code>([belowThis])</td>
+<td>Lower this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">mainloop</span></code>([n])</td>
+<td>Call the mainloop of Tk.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">nametowidget</span></code>(name)</td>
+<td>Return the Tkinter instance of a widget identified by its Tcl name NAME.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainGenreForm.onQuit" title="GUI.MainGenreForm.onQuit"><code class="xref py py-obj docutils literal"><span class="pre">onQuit</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.MainGenreForm.onSaveMainClassifier" title="GUI.MainGenreForm.onSaveMainClassifier"><code class="xref py py-obj docutils literal"><span class="pre">onSaveMainClassifier</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainGenreForm.onTrainBinaryGenreCheck" title="GUI.MainGenreForm.onTrainBinaryGenreCheck"><code class="xref py py-obj docutils literal"><span class="pre">onTrainBinaryGenreCheck</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_add</span></code>(pattern,&nbsp;value[,&nbsp;priority])</td>
+<td>Set a VALUE (second parameter) for an option PATTERN (first parameter).</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_clear</span></code>()</td>
+<td>Clear the option database.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_get</span></code>(name,&nbsp;className)</td>
+<td>Return the value for an option NAME for this widget with CLASSNAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_readfile</span></code>(fileName[,&nbsp;priority])</td>
+<td>Read file FILENAME into the option database.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">place_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.MainGenreForm.process_main_genre" title="GUI.MainGenreForm.process_main_genre"><code class="xref py py-obj docutils literal"><span class="pre">process_main_genre</span></code></a>()</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">quit</span></code>()</td>
+<td>Quit the Tcl interpreter.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">register</span></code>(func[,&nbsp;subst,&nbsp;needcleanup])</td>
+<td>Return a newly created Tcl function.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_clear</span></code>(\*\*kw)</td>
+<td>Clear the current X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_get</span></code>(\*\*kw)</td>
+<td>Return the contents of the current X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_handle</span></code>(command,&nbsp;\*\*kw)</td>
+<td>Specify a function COMMAND to call if the X selection owned by this widget is queried by another application.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own</span></code>(\*\*kw)</td>
+<td>Become owner of X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own_get</span></code>(\*\*kw)</td>
+<td>Return owner of X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">send</span></code>(interp,&nbsp;cmd,&nbsp;\*args)</td>
+<td>Send Tcl command CMD to different interpreter INTERP to be executed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setvar</span></code>([name,&nbsp;value])</td>
+<td>Set Tcl variable NAME to VALUE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_bisque</span></code>()</td>
+<td>Change the color scheme to light brown as used in Tk 3.6 and before.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusFollowsMouse</span></code>()</td>
+<td>The widget under mouse will get automatically focus.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusNext</span></code>()</td>
+<td>Return the next widget in the focus order which follows widget which has currently the focus.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusPrev</span></code>()</td>
+<td>Return previous widget in the focus order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_menuBar</span></code>(\*args)</td>
+<td>Do not use.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_setPalette</span></code>(\*args,&nbsp;\*\*kw)</td>
+<td>Set a new color scheme for all widget elements.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_strictMotif</span></code>([boolean])</td>
+<td>Set Tcl internal variable, whether the look and feel should adhere to Motif.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tkraise</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind</span></code>(sequence[,&nbsp;funcid])</td>
+<td>Unbind for this widget for event SEQUENCE  the function identified with FUNCID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_all</span></code>(sequence)</td>
+<td>Unbind for all widgets for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_class</span></code>(className,&nbsp;sequence)</td>
+<td>Unbind for all widgets with bindtag CLASSNAME for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">update</span></code>()</td>
+<td>Enter event loop until all pending events have been processed by Tcl.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">update_idletasks</span></code>()</td>
+<td>Enter event loop until all idle callbacks have been called.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_variable</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_visibility</span></code>([window])</td>
+<td>Wait until the visibility of a WIDGET changes (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_window</span></code>([window])</td>
+<td>Wait until a WIDGET is destroyed.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">waitvar</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atom</span></code>(name[,&nbsp;displayof])</td>
+<td>Return integer which represents atom NAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atomname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return name of atom with identifier ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_cells</span></code>()</td>
+<td>Return number of cells in the colormap for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_children</span></code>()</td>
+<td>Return a list of all widgets which are children of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_class</span></code>()</td>
+<td>Return window class name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_colormapfull</span></code>()</td>
+<td>Return true if at the last color request the colormap was full.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_containing</span></code>(rootX,&nbsp;rootY[,&nbsp;displayof])</td>
+<td>Return the widget which is at the root coordinates ROOTX, ROOTY.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_depth</span></code>()</td>
+<td>Return the number of bits per pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_exists</span></code>()</td>
+<td>Return true if this widget exists.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_fpixels</span></code>(number)</td>
+<td>Return the number of pixels for the given distance NUMBER (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_geometry</span></code>()</td>
+<td>Return geometry string for this widget in the form &#8220;widthxheight+X+Y&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_height</span></code>()</td>
+<td>Return height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_id</span></code>()</td>
+<td>Return identifier ID for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_interps</span></code>([displayof])</td>
+<td>Return the name of all Tcl interpreters for this display.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_ismapped</span></code>()</td>
+<td>Return true if this widget is mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_manager</span></code>()</td>
+<td>Return the window mananger name for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_name</span></code>()</td>
+<td>Return the name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_parent</span></code>()</td>
+<td>Return the name of the parent of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pathname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return the pathname of the widget given by ID.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pixels</span></code>(number)</td>
+<td>Rounded integer value of winfo_fpixels.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerx</span></code>()</td>
+<td>Return the x coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerxy</span></code>()</td>
+<td>Return a tuple of x and y coordinates of the pointer on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointery</span></code>()</td>
+<td>Return the y coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqheight</span></code>()</td>
+<td>Return requested height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqwidth</span></code>()</td>
+<td>Return requested width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rgb</span></code>(color)</td>
+<td>Return tuple of decimal values for red, green, blue for COLOR in this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rootx</span></code>()</td>
+<td>Return x coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rooty</span></code>()</td>
+<td>Return y coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screen</span></code>()</td>
+<td>Return the screen name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screencells</span></code>()</td>
+<td>Return the number of the cells in the colormap of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screendepth</span></code>()</td>
+<td>Return the number of bits per pixel of the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenvisual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the default colormodel of this screen.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_server</span></code>()</td>
+<td>Return information of the X-Server of the screen of this widget in the form &#8220;XmajorRminor vendor vendorVersion&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_toplevel</span></code>()</td>
+<td>Return the toplevel widget of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_viewable</span></code>()</td>
+<td>Return true if the widget and all its higher ancestors are mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the colormodel of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualid</span></code>()</td>
+<td>Return the X identifier for the visual for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualsavailable</span></code>([includeids])</td>
+<td>Return a list of all visuals available for the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootheight</span></code>()</td>
+<td>Return the height of the virtual root window associated with this widget in pixels.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootwidth</span></code>()</td>
+<td>Return the width of the virtual root window associated with this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootx</span></code>()</td>
+<td>Return the x offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrooty</span></code>()</td>
+<td>Return the y offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_width</span></code>()</td>
+<td>Return the width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_x</span></code>()</td>
+<td>Return the x coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_y</span></code>()</td>
+<td>Return the y coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;...])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="GUI.MainGenreForm.convert_to_binary_class">
+<code class="descname">convert_to_binary_class</code><span class="sig-paren">(</span><em>testing_corpus</em>, <em>train_corpus</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm.convert_to_binary_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm.convert_to_binary_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>testing_corpus</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>train_corpus</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainGenreForm.onQuit">
+<code class="descname">onQuit</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm.onQuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm.onQuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainGenreForm.onSaveMainClassifier">
+<code class="descname">onSaveMainClassifier</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm.onSaveMainClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm.onSaveMainClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainGenreForm.onTrainBinaryGenreCheck">
+<code class="descname">onTrainBinaryGenreCheck</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm.onTrainBinaryGenreCheck"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm.onTrainBinaryGenreCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.MainGenreForm.process_main_genre">
+<code class="descname">process_main_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#MainGenreForm.process_main_genre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.MainGenreForm.process_main_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<p class="last"><strong>Description</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sub-genre-form">
+<h2>Sub Genre Form<a class="headerlink" href="#sub-genre-form" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="GUI.SubGenreForm">
+<em class="property">class </em><code class="descclassname">GUI.</code><code class="descname">SubGenreForm</code><span class="sig-paren">(</span><em>root</em>, <em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Toplevel</span></code></p>
+<p>Summary</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>actualFigure</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>canvas</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>class_measures</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>class_report</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>save_classifier</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>spinner</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>sub_confusion</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>subclassifier</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>table</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>testing_corpus</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>toolbar</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-even"><td>train_corpus</td>
+<td>(TYPE) Description</td>
+</tr>
+<tr class="row-odd"><td>train_sub_button</td>
+<td>(TYPE) Description</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after</span></code>(ms[,&nbsp;func])</td>
+<td>Call function once after given time.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">after_cancel</span></code>(id)</td>
+<td>Cancel scheduling of function identified with ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">after_idle</span></code>(func,&nbsp;\*args)</td>
+<td>Call FUNC once if the Tcl main loop has no event to process.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;maxDenom])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bell</span></code>([displayof])</td>
+<td>Ring a display&#8217;s bell.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to this widget at event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_all</span></code>([sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to all widgets at an event SEQUENCE a call to function FUNC.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">bind_class</span></code>(className[,&nbsp;sequence,&nbsp;func,&nbsp;add])</td>
+<td>Bind to widgets with bindtag CLASSNAME at event SEQUENCE a call of function FUNC.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">bindtags</span></code>([tagList])</td>
+<td>Set or get the list of bindtags for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">cget</span></code>(key)</td>
+<td>Return the resource value for a KEY given as string.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_append</span></code>(string,&nbsp;\*\*kw)</td>
+<td>Append STRING to the Tk clipboard.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_clear</span></code>(\*\*kw)</td>
+<td>Clear the data in the Tk clipboard.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">clipboard_get</span></code>(\*\*kw)</td>
+<td>Retrieve data from the clipboard on window&#8217;s display.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">colormodel</span></code>([value])</td>
+<td>Useless.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">config</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">configure</span></code>([cnf])</td>
+<td>Configure resources of a widget.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.SubGenreForm.convert_to_multi" title="GUI.SubGenreForm.convert_to_multi"><code class="xref py py-obj docutils literal"><span class="pre">convert_to_multi</span></code></a>(test_corpus,&nbsp;train_corpus)</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">deletecommand</span></code>(name)</td>
+<td>Internal function.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">destroy</span></code>()</td>
+<td>Destroy this and all descendants widgets.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_add</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Bind a virtual event VIRTUAL (of the form &lt;&lt;Name&gt;&gt;) to an event SEQUENCE such that the virtual event is triggered whenever SEQUENCE occurs.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_delete</span></code>(virtual,&nbsp;\*sequences)</td>
+<td>Unbind a virtual event VIRTUAL from SEQUENCE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">event_generate</span></code>(sequence,&nbsp;\*\*kw)</td>
+<td>Generate an event SEQUENCE.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">event_info</span></code>([virtual])</td>
+<td>Return a list of all virtual events or the information about the SEQUENCE bound to the virtual event VIRTUAL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_displayof</span></code>()</td>
+<td>Return the widget which has currently the focus on the display where this widget is located.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_force</span></code>()</td>
+<td>Direct input focus to this widget even if the application does not have the focus.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_get</span></code>()</td>
+<td>Return the widget which has currently the focus in the application.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_lastfor</span></code>()</td>
+<td>Return the widget which would have the focus if top level for this widget gets the focus from the window manager.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">focus_set</span></code>()</td>
+<td>Direct input focus to this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getboolean</span></code>(s)</td>
+<td>Return a boolean value for Tcl boolean values true and false given as parameter.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getdouble</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">float</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">getint</span></code></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">int</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">getvar</span></code>([name])</td>
+<td>Return value of Tcl variable NAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_current</span></code>()</td>
+<td>Return widget which has currently the grab in this application or None.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_release</span></code>()</td>
+<td>Release grab for this widget if currently set.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set</span></code>()</td>
+<td>Set grab for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_set_global</span></code>()</td>
+<td>Set global grab for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grab_status</span></code>()</td>
+<td>Return None, &#8220;local&#8221; or &#8220;global&#8221; if this widget has no, a local or a global grab.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_anchor</span></code>([anchor])</td>
+<td>The anchor value controls how to place the grid within the master when no row/column has any weight.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_bbox</span></code>([column,&nbsp;row,&nbsp;col2,&nbsp;row2])</td>
+<td>Return a tuple of integer coordinates for the bounding box of this widget controlled by the geometry manager grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_columnconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure column INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_location</span></code>(x,&nbsp;y)</td>
+<td>Return a tuple of column and row which identify the cell at which the pixel at position X and Y inside the master widget is located.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">grid_slaves</span></code>([row,&nbsp;column])</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">image_names</span></code>()</td>
+<td>Return a list of all existing image names.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">image_types</span></code>()</td>
+<td>Return a list of all available image types (e.g.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code>()</td>
+<td>Return a list of all resource names of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">lift</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">lower</span></code>([belowThis])</td>
+<td>Lower this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">mainloop</span></code>([n])</td>
+<td>Call the mainloop of Tk.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">nametowidget</span></code>(name)</td>
+<td>Return the Tkinter instance of a widget identified by its Tcl name NAME.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.SubGenreForm.onQuit" title="GUI.SubGenreForm.onQuit"><code class="xref py py-obj docutils literal"><span class="pre">onQuit</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#GUI.SubGenreForm.onSaveSubGenreClassifier" title="GUI.SubGenreForm.onSaveSubGenreClassifier"><code class="xref py py-obj docutils literal"><span class="pre">onSaveSubGenreClassifier</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.SubGenreForm.onTrainMultiGenreClassifier" title="GUI.SubGenreForm.onTrainMultiGenreClassifier"><code class="xref py py-obj docutils literal"><span class="pre">onTrainMultiGenreClassifier</span></code></a>([event])</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_add</span></code>(pattern,&nbsp;value[,&nbsp;priority])</td>
+<td>Set a VALUE (second parameter) for an option PATTERN (first parameter).</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_clear</span></code>()</td>
+<td>Clear the option database.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">option_get</span></code>(name,&nbsp;className)</td>
+<td>Return the value for an option NAME for this widget with CLASSNAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">option_readfile</span></code>(fileName[,&nbsp;priority])</td>
+<td>Read file FILENAME into the option database.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">pack_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">place_slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#GUI.SubGenreForm.process_sub_genre" title="GUI.SubGenreForm.process_sub_genre"><code class="xref py py-obj docutils literal"><span class="pre">process_sub_genre</span></code></a>()</td>
+<td>Summary</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">propagate</span></code>([flag])</td>
+<td>Set or get the status for propagation of geometry information.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">quit</span></code>()</td>
+<td>Quit the Tcl interpreter.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">register</span></code>(func[,&nbsp;subst,&nbsp;needcleanup])</td>
+<td>Return a newly created Tcl function.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">rowconfigure</span></code>(index[,&nbsp;cnf])</td>
+<td>Configure row INDEX of a grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_clear</span></code>(\*\*kw)</td>
+<td>Clear the current X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_get</span></code>(\*\*kw)</td>
+<td>Return the contents of the current X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_handle</span></code>(command,&nbsp;\*\*kw)</td>
+<td>Specify a function COMMAND to call if the X selection owned by this widget is queried by another application.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own</span></code>(\*\*kw)</td>
+<td>Become owner of X selection.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">selection_own_get</span></code>(\*\*kw)</td>
+<td>Return owner of X selection.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">send</span></code>(interp,&nbsp;cmd,&nbsp;\*args)</td>
+<td>Send Tcl command CMD to different interpreter INTERP to be executed.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">setvar</span></code>([name,&nbsp;value])</td>
+<td>Set Tcl variable NAME to VALUE.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">size</span></code>()</td>
+<td>Return a tuple of the number of column and rows in the grid.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">slaves</span></code>()</td>
+<td>Return a list of all slaves of this widget in its packing order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_bisque</span></code>()</td>
+<td>Change the color scheme to light brown as used in Tk 3.6 and before.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusFollowsMouse</span></code>()</td>
+<td>The widget under mouse will get automatically focus.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusNext</span></code>()</td>
+<td>Return the next widget in the focus order which follows widget which has currently the focus.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_focusPrev</span></code>()</td>
+<td>Return previous widget in the focus order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_menuBar</span></code>(\*args)</td>
+<td>Do not use.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_setPalette</span></code>(\*args,&nbsp;\*\*kw)</td>
+<td>Set a new color scheme for all widget elements.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">tk_strictMotif</span></code>([boolean])</td>
+<td>Set Tcl internal variable, whether the look and feel should adhere to Motif.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tkraise</span></code>([aboveThis])</td>
+<td>Raise this widget in the stacking order.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind</span></code>(sequence[,&nbsp;funcid])</td>
+<td>Unbind for this widget for event SEQUENCE  the function identified with FUNCID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_all</span></code>(sequence)</td>
+<td>Unbind for all widgets for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">unbind_class</span></code>(className,&nbsp;sequence)</td>
+<td>Unbind for all widgets with bindtag CLASSNAME for event SEQUENCE all functions.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">update</span></code>()</td>
+<td>Enter event loop until all pending events have been processed by Tcl.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">update_idletasks</span></code>()</td>
+<td>Enter event loop until all idle callbacks have been called.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_variable</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_visibility</span></code>([window])</td>
+<td>Wait until the visibility of a WIDGET changes (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wait_window</span></code>([window])</td>
+<td>Wait until a WIDGET is destroyed.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">waitvar</span></code>([name])</td>
+<td>Wait until the variable is modified.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atom</span></code>(name[,&nbsp;displayof])</td>
+<td>Return integer which represents atom NAME.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_atomname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return name of atom with identifier ID.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_cells</span></code>()</td>
+<td>Return number of cells in the colormap for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_children</span></code>()</td>
+<td>Return a list of all widgets which are children of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_class</span></code>()</td>
+<td>Return window class name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_colormapfull</span></code>()</td>
+<td>Return true if at the last color request the colormap was full.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_containing</span></code>(rootX,&nbsp;rootY[,&nbsp;displayof])</td>
+<td>Return the widget which is at the root coordinates ROOTX, ROOTY.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_depth</span></code>()</td>
+<td>Return the number of bits per pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_exists</span></code>()</td>
+<td>Return true if this widget exists.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_fpixels</span></code>(number)</td>
+<td>Return the number of pixels for the given distance NUMBER (e.g.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_geometry</span></code>()</td>
+<td>Return geometry string for this widget in the form &#8220;widthxheight+X+Y&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_height</span></code>()</td>
+<td>Return height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_id</span></code>()</td>
+<td>Return identifier ID for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_interps</span></code>([displayof])</td>
+<td>Return the name of all Tcl interpreters for this display.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_ismapped</span></code>()</td>
+<td>Return true if this widget is mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_manager</span></code>()</td>
+<td>Return the window mananger name for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_name</span></code>()</td>
+<td>Return the name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_parent</span></code>()</td>
+<td>Return the name of the parent of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pathname</span></code>(id[,&nbsp;displayof])</td>
+<td>Return the pathname of the widget given by ID.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pixels</span></code>(number)</td>
+<td>Rounded integer value of winfo_fpixels.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerx</span></code>()</td>
+<td>Return the x coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointerxy</span></code>()</td>
+<td>Return a tuple of x and y coordinates of the pointer on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_pointery</span></code>()</td>
+<td>Return the y coordinate of the pointer on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqheight</span></code>()</td>
+<td>Return requested height of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_reqwidth</span></code>()</td>
+<td>Return requested width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rgb</span></code>(color)</td>
+<td>Return tuple of decimal values for red, green, blue for COLOR in this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rootx</span></code>()</td>
+<td>Return x coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_rooty</span></code>()</td>
+<td>Return y coordinate of upper left corner of this widget on the root window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screen</span></code>()</td>
+<td>Return the screen name of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screencells</span></code>()</td>
+<td>Return the number of the cells in the colormap of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screendepth</span></code>()</td>
+<td>Return the number of bits per pixel of the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmheight</span></code>()</td>
+<td>Return the number of pixels of the height of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenmmwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in mm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenvisual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the default colormodel of this screen.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_screenwidth</span></code>()</td>
+<td>Return the number of pixels of the width of the screen of this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_server</span></code>()</td>
+<td>Return information of the X-Server of the screen of this widget in the form &#8220;XmajorRminor vendor vendorVersion&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_toplevel</span></code>()</td>
+<td>Return the toplevel widget of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_viewable</span></code>()</td>
+<td>Return true if the widget and all its higher ancestors are mapped.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visual</span></code>()</td>
+<td>Return one of the strings directcolor, grayscale, pseudocolor, staticcolor, staticgray, or truecolor for the colormodel of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualid</span></code>()</td>
+<td>Return the X identifier for the visual for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_visualsavailable</span></code>([includeids])</td>
+<td>Return a list of all visuals available for the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootheight</span></code>()</td>
+<td>Return the height of the virtual root window associated with this widget in pixels.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootwidth</span></code>()</td>
+<td>Return the width of the virtual root window associated with this widget in pixel.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrootx</span></code>()</td>
+<td>Return the x offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_vrooty</span></code>()</td>
+<td>Return the y offset of the virtual root relative to the root window of the screen of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_width</span></code>()</td>
+<td>Return the width of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_x</span></code>()</td>
+<td>Return the x coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">winfo_y</span></code>()</td>
+<td>Return the y coordinate of the upper left corner of this widget in the parent.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_aspect</span></code>([minNumer,&nbsp;minDenom,&nbsp;maxNumer,&nbsp;...])</td>
+<td>Instruct the window manager to set the aspect ratio (width/height) of this widget to be between MINNUMER/MINDENOM and MAXNUMER/MAXDENOM.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_attributes</span></code>(\*args)</td>
+<td>This subcommand returns or sets platform specific attributes</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_client</span></code>([name])</td>
+<td>Store NAME in WM_CLIENT_MACHINE property of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_colormapwindows</span></code>(\*wlist)</td>
+<td>Store list of window names (WLIST) into WM_COLORMAPWINDOWS property of this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_command</span></code>([value])</td>
+<td>Store VALUE in WM_COMMAND property.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_deiconify</span></code>()</td>
+<td>Deiconify this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_focusmodel</span></code>([model])</td>
+<td>Set focus model to MODEL.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_forget</span></code>(window)</td>
+<td>The window will be unmappend from the screen and will no longer be managed by wm.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_frame</span></code>()</td>
+<td>Return identifier for decorative frame of this widget if present.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_geometry</span></code>([newGeometry])</td>
+<td>Set geometry to NEWGEOMETRY of the form =widthxheight+x+y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_grid</span></code>([baseWidth,&nbsp;baseHeight,&nbsp;widthInc,&nbsp;...])</td>
+<td>Instruct the window manager that this widget shall only be resized on grid boundaries.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_group</span></code>([pathName])</td>
+<td>Set the group leader widgets for related widgets to PATHNAME.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconbitmap</span></code>([bitmap,&nbsp;default])</td>
+<td>Set bitmap for the iconified widget to BITMAP.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconify</span></code>()</td>
+<td>Display widget as icon.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconmask</span></code>([bitmap])</td>
+<td>Set mask for the icon bitmap of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconname</span></code>([newName])</td>
+<td>Set the name of the icon for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconphoto</span></code>([default])</td>
+<td>Sets the titlebar icon for this window based on the named photo images passed through args.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconposition</span></code>([x,&nbsp;y])</td>
+<td>Set the position of the icon of this widget to X and Y.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_iconwindow</span></code>([pathName])</td>
+<td>Set widget PATHNAME to be displayed instead of icon.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_manage</span></code>(widget)</td>
+<td>The widget specified will become a stand alone top-level window.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_maxsize</span></code>([width,&nbsp;height])</td>
+<td>Set max WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_minsize</span></code>([width,&nbsp;height])</td>
+<td>Set min WIDTH and HEIGHT for this widget.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_overrideredirect</span></code>([boolean])</td>
+<td>Instruct the window manager to ignore this widget if BOOLEAN is given with 1.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_positionfrom</span></code>([who])</td>
+<td>Instruct the window manager that the position of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_protocol</span></code>([name,&nbsp;func])</td>
+<td>Bind function FUNC to command NAME for this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_resizable</span></code>([width,&nbsp;height])</td>
+<td>Instruct the window manager whether this width can be resized in WIDTH or HEIGHT.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_sizefrom</span></code>([who])</td>
+<td>Instruct the window manager that the size of this widget shall be defined by the user if WHO is &#8220;user&#8221;, and by its own policy if WHO is &#8220;program&#8221;.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_state</span></code>([newstate])</td>
+<td>Query or set the state of this widget as one of normal, icon, iconic (see wm_iconwindow), withdrawn, or zoomed (Windows only).</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_title</span></code>([string])</td>
+<td>Set the title of this widget.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_transient</span></code>([master])</td>
+<td>Instruct the window manager that this widget is transient with regard to widget MASTER.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">wm_withdraw</span></code>()</td>
+<td>Withdraw this widget from the screen such that it is unmapped and forgotten by the window manager.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="GUI.SubGenreForm.convert_to_multi">
+<code class="descname">convert_to_multi</code><span class="sig-paren">(</span><em>test_corpus</em>, <em>train_corpus</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm.convert_to_multi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm.convert_to_multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>test_corpus</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>train_corpus</strong> : TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.SubGenreForm.onQuit">
+<code class="descname">onQuit</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm.onQuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm.onQuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.SubGenreForm.onSaveSubGenreClassifier">
+<code class="descname">onSaveSubGenreClassifier</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm.onSaveSubGenreClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm.onSaveSubGenreClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.SubGenreForm.onTrainMultiGenreClassifier">
+<code class="descname">onTrainMultiGenreClassifier</code><span class="sig-paren">(</span><em>event=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm.onTrainMultiGenreClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm.onTrainMultiGenreClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>event</strong> : None, optional</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI.SubGenreForm.process_sub_genre">
+<code class="descname">process_sub_genre</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#SubGenreForm.process_sub_genre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.SubGenreForm.process_sub_genre" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<p class="last"><strong>Description</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-functions">
+<h2>Module Functions<a class="headerlink" href="#module-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="GUI.start_spinner">
+<code class="descclassname">GUI.</code><code class="descname">start_spinner</code><span class="sig-paren">(</span><em>spinner: tkinter.ttk.Progressbar</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#start_spinner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.start_spinner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a given spinner control</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spinner</strong> : Progressbar</p>
+<blockquote class="last">
+<div><p>Progressbar sscontrol set to indeterminate time</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>While spinner is  moving other events are ignored</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="GUI.stop_spinner">
+<code class="descclassname">GUI.</code><code class="descname">stop_spinner</code><span class="sig-paren">(</span><em>spinner: tkinter.ttk.Progressbar</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#stop_spinner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.stop_spinner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop a given spinner control</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>spinner</strong> : Progressbar</p>
+<blockquote class="last">
+<div><p>Progressbar control set to indeterminate time</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="GUI.extract_report_text">
+<code class="descclassname">GUI.</code><code class="descname">extract_report_text</code><span class="sig-paren">(</span><em>report</em>, <em>measures</em>, <em>confusion_matrix: collections.OrderedDict</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/GUI.html#extract_report_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.extract_report_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a textual classification report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>report</strong> : TYPE</p>
+<blockquote>
+<div><p>classification report</p>
+</div></blockquote>
+<p><strong>measures</strong> : TYPE</p>
+<blockquote>
+<div><p>detailed statistics or measures</p>
+</div></blockquote>
+<p><strong>confusion_matrix</strong> : OrderedDict</p>
+<blockquote>
+<div><p>confusion matrix dictionary</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<p><strong>&#8212;&#8212;-</strong></p>
+<p><strong>str</strong></p>
+<blockquote class="last">
+<div><p>Classification Report</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="GUI.plot_class_report">
+<code class="descclassname">GUI.</code><code class="descname">plot_class_report</code><span class="sig-paren">(</span><em>classification_report</em>, <em>orientation: str</em>, <em>class_names=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#plot_class_report"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.plot_class_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot sklearn classification report</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>classification_report</strong> : TYPE</p>
+<blockquote>
+<div><p>classification report text</p>
+</div></blockquote>
+<p><strong>orientation</strong> : str</p>
+<blockquote>
+<div><p>Wide or Narrow orientation</p>
+</div></blockquote>
+<p><strong>class_names</strong> : list, optional</p>
+<blockquote class="last">
+<div><p>Class labels</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="GUI.plot_confusion_matrix">
+<code class="descclassname">GUI.</code><code class="descname">plot_confusion_matrix</code><span class="sig-paren">(</span><em>confusion_matrix: pandas_ml.confusion_matrix.cm.ConfusionMatrix</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#plot_confusion_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.plot_confusion_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot confusion matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>confusion_matrix</strong> : ConfusionMatrix</p>
+<blockquote class="last">
+<div><p>sklearn ConfusionMatrix object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="GUI.smiley_plot">
+<code class="descclassname">GUI.</code><code class="descname">smiley_plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUI.html#smiley_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUI.smiley_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Placeholder smiley face plot</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="customui.html" class="btn btn-neutral float-right" title="Custom UI Components" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classification.html" class="btn btn-neutral" title="Classification" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Nathan Zwelibanzi Khupe.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,1251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Utility Classes &mdash; Fantasy Genre Extractor 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Fantasy Genre Extractor 1.0.0 documentation" href="index.html"/>
+        <link rel="up" title="API Documentation" href="code.html"/>
+        <link rel="prev" title="Custom UI Components" href="customui.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Fantasy Genre Extractor
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project.html#motivation-and-aims">Motivation and Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#author">Author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#supervisor">Supervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html"><strong>Tutorial</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#application-on-start-up">Application On Start-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#setting-up-the-corpus">Setting Up The Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-the-fantasy-filter">Train The Fantasy Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#train-sub-genre-classifier">Train Sub Genre Classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#extract-genres-from-text">Extract Genres From Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#step-1-checking-main-genre">Step 1: Checking main genre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#step-2-extracting-main-genre">Step 2: Extracting main genre</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="code.html"><strong>API Documentation</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classification.html">Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classification.html#classifiertype">ClassifierType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classification.html#genreclassifier">GenreClassifier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gui.html">Graphic User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gui.html#main-form">Main Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui.html#corpus-form">Corpus Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui.html#main-genre-form">Main Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui.html#sub-genre-form">Sub Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui.html#module-functions">Module Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="customui.html">Custom UI Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#status-bar">Status Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#logger-widget">Logger Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="customui.html#console-widget">Console Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Utility Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#logging-utility">Logging Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#corpus-utility">Corpus Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-sanitisation-utility">Text Sanitisation Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-utility">Configuration Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-management-utility">File Management Utility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Fantasy Genre Extractor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="code.html"><strong>API Documentation</strong></a> &raquo;</li>
+      
+    <li>Utility Classes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/utilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-Utilities">
+<span id="utility-classes"></span><h1>Utility Classes<a class="headerlink" href="#module-Utilities" title="Permalink to this headline">¶</a></h1>
+<p><strong>Contents</strong></p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.LogUtils" title="Utilities.LogUtils"><code class="xref py py-obj docutils literal"><span class="pre">LogUtils</span></code></a>(saveToFile:&nbsp;bool,&nbsp;\*\*kwargs)</td>
+<td>Utility functions for working with the python logging package</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.CorpusUtils" title="Utilities.CorpusUtils"><code class="xref py py-obj docutils literal"><span class="pre">CorpusUtils</span></code></a>(\*\*kwargs)</td>
+<td>Utility functions for building a corpus of texts</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer" title="Utilities.TextSanitizer"><code class="xref py py-obj docutils literal"><span class="pre">TextSanitizer</span></code></a>(\*\*kwargs)</td>
+<td>Utility functions for preprocessing text</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.ConfigUtils" title="Utilities.ConfigUtils"><code class="xref py py-obj docutils literal"><span class="pre">ConfigUtils</span></code></a>(...)</td>
+<td>Utility functions for managing configuration settings</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.FileManager" title="Utilities.FileManager"><code class="xref py py-obj docutils literal"><span class="pre">FileManager</span></code></a>(\*args,&nbsp;\*\*kargs)</td>
+<td>Manage file input and out operations</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="logging-utility">
+<h2>Logging Utility<a class="headerlink" href="#logging-utility" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Utilities.LogUtils">
+<em class="property">class </em><code class="descclassname">Utilities.</code><code class="descname">LogUtils</code><span class="sig-paren">(</span><em>saveToFile: bool</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#LogUtils"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.LogUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Utility functions for working with the python logging package</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.LogUtils.add_handler" title="Utilities.LogUtils.add_handler"><code class="xref py py-obj docutils literal"><span class="pre">add_handler</span></code></a>(handler:&nbsp;logging.Handler)</td>
+<td>Add a new handler to the logger</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.LogUtils.make_logger" title="Utilities.LogUtils.make_logger"><code class="xref py py-obj docutils literal"><span class="pre">make_logger</span></code></a>((isSaved:&nbsp;bool)&nbsp;-&gt;&nbsp;logging.Logger)</td>
+<td>Create logger with predefined settings</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.LogUtils.write" title="Utilities.LogUtils.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(type:&nbsp;str,&nbsp;message:&nbsp;str)</td>
+<td>Write a message to the logger</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="Utilities.LogUtils.add_handler">
+<em class="property">classmethod </em><code class="descname">add_handler</code><span class="sig-paren">(</span><em>handler: logging.Handler</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#LogUtils.add_handler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.LogUtils.add_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new handler to the logger</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>handler</strong> : Handler</p>
+<blockquote class="last">
+<div><p>An instance of <code class="xref py py-class docutils literal"><span class="pre">Handler</span></code></p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.LogUtils.make_logger">
+<em class="property">classmethod </em><code class="descname">make_logger</code><span class="sig-paren">(</span><em>isSaved: bool</em><span class="sig-paren">)</span> &rarr; logging.Logger<a class="reference internal" href="_modules/Utilities.html#LogUtils.make_logger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.LogUtils.make_logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create logger with predefined settings</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>isSaved</strong> : bool</p>
+<blockquote>
+<div><p>Save logs to a file? Y/N</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Logger</p>
+<blockquote class="last">
+<div><p>A configured <code class="xref py py-class docutils literal"><span class="pre">Logger</span></code> object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.LogUtils.write">
+<em class="property">classmethod </em><code class="descname">write</code><span class="sig-paren">(</span><em>type: str</em>, <em>message: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#LogUtils.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.LogUtils.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a message to the logger</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>type</strong> : str</p>
+<blockquote>
+<div><p>The type of the message e.g. info, warn, error, critical or debug</p>
+</div></blockquote>
+<p><strong>message</strong> : str</p>
+<blockquote class="last">
+<div><p>The message to save in the log</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="corpus-utility">
+<h2>Corpus Utility<a class="headerlink" href="#corpus-utility" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Utilities.CorpusUtils">
+<em class="property">class </em><code class="descclassname">Utilities.</code><code class="descname">CorpusUtils</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#CorpusUtils"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Utility functions for building a corpus of texts</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.CorpusUtils.create_genred_corpus" title="Utilities.CorpusUtils.create_genred_corpus"><code class="xref py py-obj docutils literal"><span class="pre">create_genred_corpus</span></code></a>((directory:&nbsp;str,&nbsp;...)</td>
+<td>Create a categorised corpus</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.CorpusUtils.create_plain_corpus" title="Utilities.CorpusUtils.create_plain_corpus"><code class="xref py py-obj docutils literal"><span class="pre">create_plain_corpus</span></code></a>((directory:&nbsp;str,&nbsp;...)</td>
+<td>Create a simple uncategorised corpus</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.CorpusUtils.get_split_corpus" title="Utilities.CorpusUtils.get_split_corpus"><code class="xref py py-obj docutils literal"><span class="pre">get_split_corpus</span></code></a>(...)</td>
+<td>Split the CategorizedPlaintextCorpusReader into a training</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.CorpusUtils.pre_process_text" title="Utilities.CorpusUtils.pre_process_text"><code class="xref py py-obj docutils literal"><span class="pre">pre_process_text</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Sanitize raw unstructured text document by:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.CorpusUtils.sanitize_file" title="Utilities.CorpusUtils.sanitize_file"><code class="xref py py-obj docutils literal"><span class="pre">sanitize_file</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Clean a text file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.CorpusUtils.sanitize_list" title="Utilities.CorpusUtils.sanitize_list"><code class="xref py py-obj docutils literal"><span class="pre">sanitize_list</span></code></a>((raw_words:&nbsp;list)&nbsp;-&gt;&nbsp;list)</td>
+<td>Clean a list of words</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.create_genred_corpus">
+<em class="property">classmethod </em><code class="descname">create_genred_corpus</code><span class="sig-paren">(</span><em>directory: str</em>, <em>file_pattern: str</em>, <em>genre_file: str</em><span class="sig-paren">)</span> &rarr; nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.create_genred_corpus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.create_genred_corpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a categorised corpus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>directory</strong> : str</p>
+<blockquote>
+<div><p>The path to the corpus directory</p>
+</div></blockquote>
+<p><strong>file_pattern</strong> : str</p>
+<blockquote>
+<div><p>Regex definition of files to include in the corpu</p>
+</div></blockquote>
+<p><strong>genre_file</strong> : str</p>
+<blockquote>
+<div><p>The CSV file with the category labelled file paths</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">CategorizedPlaintextCorpusReader</p>
+<blockquote class="last">
+<div><p>CategorizedPlaintextCorpusReader object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>The expected delimiter is <cite>;;</cite> in the file~genre mapping CSV file</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.create_plain_corpus">
+<em class="property">classmethod </em><code class="descname">create_plain_corpus</code><span class="sig-paren">(</span><em>directory: str</em>, <em>file_pattern: str</em><span class="sig-paren">)</span> &rarr; nltk.corpus.reader.plaintext.PlaintextCorpusReader<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.create_plain_corpus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.create_plain_corpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a simple uncategorised corpus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>directory</strong> : str</p>
+<blockquote>
+<div><p>The path to the corpus directory</p>
+</div></blockquote>
+<p><strong>file_pattern</strong> : str</p>
+<blockquote>
+<div><p>Regex definition of files to include in the corpus</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">PlaintextCorpusReader</p>
+<blockquote class="last">
+<div><p>PlaintextCorpusReader object</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.get_split_corpus">
+<em class="property">classmethod </em><code class="descname">get_split_corpus</code><span class="sig-paren">(</span><em>corpus: nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader</em><span class="sig-paren">)</span> &rarr; tuple<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.get_split_corpus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.get_split_corpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the CategorizedPlaintextCorpusReader into a training
+and testing corpus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>corpus</strong> : CategorizedPlaintextCorpusReader</p>
+<blockquote>
+<div><p>A CategorizedPlaintextCorpusReader object</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tuple[list, list]</p>
+<blockquote class="last">
+<div><p>(Testing corpus, Training corpus)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.pre_process_text">
+<em class="property">classmethod </em><code class="descname">pre_process_text</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.pre_process_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.pre_process_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Sanitize raw unstructured text document by:</dt>
+<dd><ul class="first last simple">
+<li>remove url`s</li>
+<li>convert roman numerals to digits</li>
+<li>remove numbers - digits</li>
+<li>exclude non feature words</li>
+<li>exclude named entities</li>
+</ul>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.sanitize_file">
+<em class="property">classmethod </em><code class="descname">sanitize_file</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.sanitize_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.sanitize_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean a text file
+Operation`s
+* <code class="xref py py-func docutils literal"><span class="pre">remove_whitespace()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">remove_digits()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">remove_stopwords()</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>Cleaned text</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.CorpusUtils.sanitize_list">
+<em class="property">classmethod </em><code class="descname">sanitize_list</code><span class="sig-paren">(</span><em>raw_words: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#CorpusUtils.sanitize_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.CorpusUtils.sanitize_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean a list of words
+Operation`s
+* <code class="xref py py-func docutils literal"><span class="pre">remove_whitespace()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">transform_word_case()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">remove_stopwords()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">remove_digits()</span></code>
+* <code class="xref py py-func docutils literal"><span class="pre">lemmatize()</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_words</strong> : list</p>
+<blockquote>
+<div><p>list of words</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote class="last">
+<div><p>list of clean words</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="text-sanitisation-utility">
+<h2>Text Sanitisation Utility<a class="headerlink" href="#text-sanitisation-utility" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Utilities.TextSanitizer">
+<em class="property">class </em><code class="descclassname">Utilities.</code><code class="descname">TextSanitizer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#TextSanitizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Utility functions for preprocessing text</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.bulk_transform_case" title="Utilities.TextSanitizer.bulk_transform_case"><code class="xref py py-obj docutils literal"><span class="pre">bulk_transform_case</span></code></a>((terms:&nbsp;list)&nbsp;-&gt;&nbsp;list)</td>
+<td>Resolve case issues: upper, lower, title or abbreviations</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.dequote" title="Utilities.TextSanitizer.dequote"><code class="xref py py-obj docutils literal"><span class="pre">dequote</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove quotation from the beginning and end of a given string</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.lemmatize" title="Utilities.TextSanitizer.lemmatize"><code class="xref py py-obj docutils literal"><span class="pre">lemmatize</span></code></a>((term:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>lemmatize word</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_digits" title="Utilities.TextSanitizer.remove_digits"><code class="xref py py-obj docutils literal"><span class="pre">remove_digits</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove digits from text</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_named_entities" title="Utilities.TextSanitizer.remove_named_entities"><code class="xref py py-obj docutils literal"><span class="pre">remove_named_entities</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove named entities</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_punctuation" title="Utilities.TextSanitizer.remove_punctuation"><code class="xref py py-obj docutils literal"><span class="pre">remove_punctuation</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove punctuation marks</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_stopword" title="Utilities.TextSanitizer.remove_stopword"><code class="xref py py-obj docutils literal"><span class="pre">remove_stopword</span></code></a>((word:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove filler word</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_stopwords" title="Utilities.TextSanitizer.remove_stopwords"><code class="xref py py-obj docutils literal"><span class="pre">remove_stopwords</span></code></a>((terms:&nbsp;list)&nbsp;-&gt;&nbsp;list)</td>
+<td>Remove filler words</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_urls" title="Utilities.TextSanitizer.remove_urls"><code class="xref py py-obj docutils literal"><span class="pre">remove_urls</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove url`s</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.remove_whitespace" title="Utilities.TextSanitizer.remove_whitespace"><code class="xref py py-obj docutils literal"><span class="pre">remove_whitespace</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;list)</td>
+<td>Remove extra spaces</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.strip_roman_numerals" title="Utilities.TextSanitizer.strip_roman_numerals"><code class="xref py py-obj docutils literal"><span class="pre">strip_roman_numerals</span></code></a>((match)&nbsp;-&gt;&nbsp;str)</td>
+<td>Remove roman numerals</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.TextSanitizer.tokenizer" title="Utilities.TextSanitizer.tokenizer"><code class="xref py py-obj docutils literal"><span class="pre">tokenizer</span></code></a>((raw_text:&nbsp;str)&nbsp;-&gt;&nbsp;list)</td>
+<td>Tokenize the body of text</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.TextSanitizer.transform_word_case" title="Utilities.TextSanitizer.transform_word_case"><code class="xref py py-obj docutils literal"><span class="pre">transform_word_case</span></code></a>((word:&nbsp;str)&nbsp;-&gt;&nbsp;str)</td>
+<td>Resolve case issues: upper, lower, title or abbreviations</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="Utilities.TextSanitizer.bulk_transform_case">
+<code class="descname">bulk_transform_case</code><span class="sig-paren">(</span><em>terms: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.bulk_transform_case"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.bulk_transform_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolve case issues: upper, lower, title or abbreviations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>terms</strong> : list</p>
+<blockquote>
+<div><p>list of words</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote>
+<div><p>case transformed word list</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>terms cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.TextSanitizer.dequote">
+<em class="property">classmethod </em><code class="descname">dequote</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.dequote"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.dequote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove quotation from the beginning and end of a given string</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.lemmatize">
+<code class="descname">lemmatize</code><span class="sig-paren">(</span><em>term: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.lemmatize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.lemmatize" title="Permalink to this definition">¶</a></dt>
+<dd><p>lemmatize word</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>term</strong> : str</p>
+<blockquote>
+<div><p>word</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>lemmatized word</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_digits">
+<code class="descname">remove_digits</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_digits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_digits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove digits from text</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_named_entities">
+<code class="descname">remove_named_entities</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_named_entities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_named_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove named entities</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_punctuation">
+<code class="descname">remove_punctuation</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_punctuation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_punctuation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove punctuation marks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_stopword">
+<code class="descname">remove_stopword</code><span class="sig-paren">(</span><em>word: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_stopword"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_stopword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove filler word</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>word</strong> : str</p>
+<blockquote>
+<div><p>A word</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>None or the given word</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_stopwords">
+<code class="descname">remove_stopwords</code><span class="sig-paren">(</span><em>terms: list</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_stopwords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_stopwords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove filler words</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>terms</strong> : list</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<p class="last"><strong>Description</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_urls">
+<code class="descname">remove_urls</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_urls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_urls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove url`s</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.remove_whitespace">
+<code class="descname">remove_whitespace</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.remove_whitespace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.remove_whitespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove extra spaces</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote>
+<div><p>Description</p>
+</div></blockquote>
+<p><strong>ValueError</strong></p>
+<p class="last"><strong>Description</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.strip_roman_numerals">
+<code class="descname">strip_roman_numerals</code><span class="sig-paren">(</span><em>match</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.strip_roman_numerals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.strip_roman_numerals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove roman numerals</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>match</strong> : TYPE</p>
+<blockquote>
+<div><p>Regex match</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>Processed text</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.tokenizer">
+<code class="descname">tokenizer</code><span class="sig-paren">(</span><em>raw_text: str</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.tokenizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.tokenizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tokenize the body of text</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>raw_text</strong> : str</p>
+<blockquote>
+<div><p>Unstructured text</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote>
+<div><p>list of words</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>raw_text cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.TextSanitizer.transform_word_case">
+<code class="descname">transform_word_case</code><span class="sig-paren">(</span><em>word: str</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#TextSanitizer.transform_word_case"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.TextSanitizer.transform_word_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resolve case issues: upper, lower, title or abbreviations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>word</strong> : str</p>
+<blockquote>
+<div><p>word</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote>
+<div><p>lower case word</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first"><strong>ValueError</strong></p>
+<blockquote class="last">
+<div><p>terms cannot be empty</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="configuration-utility">
+<h2>Configuration Utility<a class="headerlink" href="#configuration-utility" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Utilities.ConfigUtils">
+<em class="property">class </em><code class="descclassname">Utilities.</code><code class="descname">ConfigUtils</code><span class="sig-paren">(</span><em>parser: configparser.ConfigParser</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#ConfigUtils"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.ConfigUtils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Utility functions for managing configuration settings</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>config</td>
+<td>(ConfigParser) ConfigParser object</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.ConfigUtils.get" title="Utilities.ConfigUtils.get"><code class="xref py py-obj docutils literal"><span class="pre">get</span></code></a>((setting:&nbsp;str[,&nbsp;section])</td>
+<td>Retrieve setting from a section of the config.py file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.ConfigUtils.load" title="Utilities.ConfigUtils.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>()</td>
+<td>Load settings contents of config file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.ConfigUtils.save" title="Utilities.ConfigUtils.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>()</td>
+<td>Save latest settings to config file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.ConfigUtils.set" title="Utilities.ConfigUtils.set"><code class="xref py py-obj docutils literal"><span class="pre">set</span></code></a>(setting:&nbsp;str,&nbsp;value[,&nbsp;section])</td>
+<td>Assign a value to a setting from a section of the config.py file</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="Utilities.ConfigUtils.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>setting: str</em>, <em>section='default'</em><span class="sig-paren">)</span> &rarr; str<a class="reference internal" href="_modules/Utilities.html#ConfigUtils.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.ConfigUtils.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve setting from a section of the config.py file
+default section is <cite>DEFAULT</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>setting</strong> : str</p>
+<blockquote>
+<div><p>Name of the setting</p>
+</div></blockquote>
+<p><strong>section</strong> : str, optional</p>
+<blockquote>
+<div><p>Section name</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str</p>
+<blockquote class="last">
+<div><p>The setting value</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.ConfigUtils.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#ConfigUtils.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.ConfigUtils.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load settings contents of config file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.ConfigUtils.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#ConfigUtils.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.ConfigUtils.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save latest settings to config file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Utilities.ConfigUtils.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>setting: str</em>, <em>value</em>, <em>section='default'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#ConfigUtils.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.ConfigUtils.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a value to a setting from a section of the config.py file
+default section is <cite>DEFAULT</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>setting</strong> : str</p>
+<blockquote>
+<div><p>Setting name</p>
+</div></blockquote>
+<p><strong>value</strong> : TYPE</p>
+<blockquote>
+<div><p>Any value</p>
+</div></blockquote>
+<p><strong>section</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Section name</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="file-management-utility">
+<h2>File Management Utility<a class="headerlink" href="#file-management-utility" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="Utilities.FileManager">
+<em class="property">class </em><code class="descclassname">Utilities.</code><code class="descname">FileManager</code><span class="sig-paren">(</span><em>*args</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#FileManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.FileManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Manage file input and out operations</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.FileManager.load_csv" title="Utilities.FileManager.load_csv"><code class="xref py py-obj docutils literal"><span class="pre">load_csv</span></code></a>((filename:&nbsp;str[,&nbsp;delimeter])</td>
+<td>Load content from a CSV file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.FileManager.read" title="Utilities.FileManager.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>(filename:&nbsp;str)</td>
+<td>Read data from file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#Utilities.FileManager.save_as_csv" title="Utilities.FileManager.save_as_csv"><code class="xref py py-obj docutils literal"><span class="pre">save_as_csv</span></code></a>(filename:&nbsp;str,&nbsp;data:&nbsp;list[,&nbsp;...])</td>
+<td>Save data as CSV file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#Utilities.FileManager.write" title="Utilities.FileManager.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(filename:&nbsp;str,&nbsp;data)</td>
+<td>Write data to file</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="Utilities.FileManager.load_csv">
+<em class="property">classmethod </em><code class="descname">load_csv</code><span class="sig-paren">(</span><em>filename: str</em>, <em>delimeter='\n'</em><span class="sig-paren">)</span> &rarr; list<a class="reference internal" href="_modules/Utilities.html#FileManager.load_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.FileManager.load_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load content from a CSV file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>Name of the file</p>
+</div></blockquote>
+<p><strong>delimeter</strong> : str, optional</p>
+<blockquote>
+<div><p>CSV delimeter used</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list</p>
+<blockquote class="last">
+<div><p>file content</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.FileManager.read">
+<em class="property">classmethod </em><code class="descname">read</code><span class="sig-paren">(</span><em>filename: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#FileManager.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.FileManager.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read data from file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>The file name</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">TYPE</p>
+<blockquote class="last">
+<div><p>file content</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.FileManager.save_as_csv">
+<em class="property">classmethod </em><code class="descname">save_as_csv</code><span class="sig-paren">(</span><em>filename: str</em>, <em>data: list</em>, <em>delimeter='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#FileManager.save_as_csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.FileManager.save_as_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save data as CSV file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>The name of the file</p>
+</div></blockquote>
+<p><strong>data</strong> : list</p>
+<blockquote>
+<div><p>The data to save</p>
+</div></blockquote>
+<p><strong>delimeter</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>The delimiter to use</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="Utilities.FileManager.write">
+<em class="property">classmethod </em><code class="descname">write</code><span class="sig-paren">(</span><em>filename: str</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Utilities.html#FileManager.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Utilities.FileManager.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write data to file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> : str</p>
+<blockquote>
+<div><p>File name</p>
+</div></blockquote>
+<p><strong>data</strong> : TYPE</p>
+<blockquote class="last">
+<div><p>Data to save</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="customui.html" class="btn btn-neutral" title="Custom UI Components" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Nathan Zwelibanzi Khupe.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

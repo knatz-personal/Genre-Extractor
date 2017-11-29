@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classification &mdash; Fantasy Genre Extractor 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Fantasy Genre Extractor 1.0.0 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Fantasy Genre Extractor
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../project.html">Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project.html#motivation-and-aims">Motivation and Aims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project.html#author">Author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project.html#supervisor">Supervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html"><strong>Tutorial</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#application-on-start-up">Application On Start-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#setting-up-the-corpus">Setting Up The Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#train-the-fantasy-filter">Train The Fantasy Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#train-sub-genre-classifier">Train Sub Genre Classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#extract-genres-from-text">Extract Genres From Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#step-1-checking-main-genre">Step 1: Checking main genre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial.html#step-2-extracting-main-genre">Step 2: Extracting main genre</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../code.html"><strong>API Documentation</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../classification.html">Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../classification.html#classifiertype">ClassifierType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../classification.html#genreclassifier">GenreClassifier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gui.html">Graphic User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gui.html#main-form">Main Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gui.html#corpus-form">Corpus Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gui.html#main-genre-form">Main Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gui.html#sub-genre-form">Sub Genre Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gui.html#module-functions">Module Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../customui.html">Custom UI Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../customui.html#status-bar">Status Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customui.html#logger-widget">Logger Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../customui.html#console-widget">Console Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utility Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../utilities.html#logging-utility">Logging Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities.html#corpus-utility">Corpus Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities.html#text-sanitisation-utility">Text Sanitisation Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities.html#configuration-utility">Configuration Utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities.html#file-management-utility">File Management Utility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Fantasy Genre Extractor</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      
+    <li>Classification</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Classification</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains classes and functions for training and</span>
+<span class="sd">testing classifiers</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">_decimal</span> <span class="k">import</span> <span class="n">Decimal</span>
+<span class="kn">from</span> <span class="nn">_decimal</span> <span class="k">import</span> <span class="n">ROUND_UP</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="k">import</span> <span class="n">ClassifierMixin</span>
+<span class="kn">from</span> <span class="nn">sklearn.calibration</span> <span class="k">import</span> <span class="n">CalibratedClassifierCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="k">import</span> <span class="n">joblib</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.classification</span> <span class="k">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.classification</span> <span class="k">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.ranking</span> <span class="k">import</span> <span class="n">coverage_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.ranking</span> <span class="k">import</span> <span class="n">label_ranking_average_precision_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.ranking</span> <span class="k">import</span> <span class="n">label_ranking_loss</span>
+<span class="kn">from</span> <span class="nn">sklearn.multiclass</span> <span class="k">import</span> <span class="n">OneVsRestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="k">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="k">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">libsvm</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">Utilities</span> <span class="k">import</span> <span class="n">FileManager</span>
+
+<span class="n">_author__</span> <span class="o">=</span> <span class="s2">&quot;Nathan Zwelibanzi Khupe&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright 2017, Nathan Zwelibanzi Khupe&quot;</span>
+<span class="n">__credits__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nathan Zwelibanzi Khupe&quot;</span><span class="p">]</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;GPL&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+<span class="n">__maintainer__</span> <span class="o">=</span> <span class="s2">&quot;Nathan Zwelibanzi Khupe&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s2">&quot;001knatz@gmail.com&quot;</span>
+<span class="n">__docformat__</span> <span class="o">=</span> <span class="s1">&#39;numpy&#39;</span>
+
+
+<div class="viewcode-block" id="ClassifierType"><a class="viewcode-back" href="../classification.html#Classification.ClassifierType">[docs]</a><span class="k">class</span> <span class="nc">ClassifierType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Defines accepted classifier type as required in this application</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    BinaryGenres : int</span>
+<span class="sd">        Genre is either Fantasy or Non-Fantasy</span>
+<span class="sd">    MultiClass : int</span>
+<span class="sd">        Genre can be multiple classes from dark fantasy to juvenile fantasy</span>
+<span class="sd">    NoClass : int</span>
+<span class="sd">        Default genre this should not result in any processing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">BinaryGenres</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">MultiClass</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">NoClass</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">pass</span>  <span class="c1"># end of ClassifierType</span></div>
+
+<div class="viewcode-block" id="GenreClassifier"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier">[docs]</a><span class="k">class</span> <span class="nc">GenreClassifier</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Container for genre classification operations</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor for :class:&#39;GenreClassifier&#39;</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        **kwargs</span>
+<span class="sd">            Default initialiser arguments</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.train_MainGenre_on"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.train_MainGenre_on">[docs]</a>    <span class="k">def</span> <span class="nf">train_MainGenre_on</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">train_documents</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">train_genres</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Train the main genre filter classifier on a list of labelled</span>
+<span class="sd">        unstructured text documents.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        train_documents : list</span>
+<span class="sd">            List of unstructured text documents for training on.</span>
+<span class="sd">        train_genres : list</span>
+<span class="sd">            List of predict labelled genres in binary form</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Pipeline</span>
+<span class="sd">            The trained classifier</span>
+<span class="sd">        list</span>
+<span class="sd">            list of word features, word counts and word tfidf_scores</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">            The number of documents must equal the number of genre labels</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Use Multilabelbinarizer to convert string genres to binary format</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_documents</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_genres</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Documents list and genre mapping must be of the same length&quot;</span><span class="p">)</span>
+
+        <span class="n">bow</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">binary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">max_features</span><span class="o">=</span><span class="mi">7000</span><span class="p">,</span>
+                              <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                              <span class="n">strip_accents</span><span class="o">=</span><span class="s1">&#39;unicode&#39;</span><span class="p">,</span>
+                              <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">classifier</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;vectorizer&#39;</span><span class="p">,</span> <span class="n">bow</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">()),</span>
+                               <span class="p">(</span><span class="s1">&#39;clf&#39;</span><span class="p">,</span> <span class="n">LinearSVC</span><span class="p">()),</span>
+                               <span class="p">(</span><span class="s1">&#39;calib&#39;</span><span class="p">,</span> <span class="n">CalibratedClassifierCV</span><span class="p">())])</span>
+
+        <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_documents</span><span class="p">,</span> <span class="n">train_genres</span><span class="p">)</span>
+
+        <span class="n">bow</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;vectorizer&#39;</span><span class="p">]</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">bow</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">bow</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">train_documents</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">tfidf</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;tfidf&#39;</span><span class="p">]</span>
+        <span class="n">tfidf_scores</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">idf_</span>
+
+        <span class="n">sif_feat</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">tfidf_scores</span><span class="p">)</span>
+        <span class="n">sif_feat</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">sif_feat</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">classifier</span><span class="p">,</span> <span class="n">sif_feat</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.predict_MainGenre"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.predict_MainGenre">[docs]</a>    <span class="k">def</span> <span class="nf">predict_MainGenre</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">raw_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Predict the main genre label on an unstructured text document.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        raw_text : str</span>
+<span class="sd">            The unstructured text document</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            A list of classes and their probability distributions</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">classifier</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ClassifierType</span><span class="o">.</span><span class="n">BinaryGenres</span><span class="p">)</span>
+
+        <span class="n">pscores</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([</span><span class="n">raw_text</span><span class="p">])</span>
+        <span class="n">pscores</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">quantize</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1.111&#39;</span><span class="p">),</span>
+                                             <span class="n">rounding</span><span class="o">=</span><span class="n">ROUND_UP</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pscores</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">prob_map</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">pscores</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">prob_map</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.train_SubGenres_on"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.train_SubGenres_on">[docs]</a>    <span class="k">def</span> <span class="nf">train_SubGenres_on</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">documents</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">genreLabels</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Train the sub genre classifier on a list of labelled</span>
+<span class="sd">        unstructured text documents.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        documents : list</span>
+<span class="sd">            List of unstructured text documents for training on.</span>
+<span class="sd">        genreLabels : list</span>
+<span class="sd">            List of predict labelled genres in binary form</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        Pipeline</span>
+<span class="sd">            The trained classifier</span>
+<span class="sd">        list</span>
+<span class="sd">            list of word features and word counts</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Use Multilabelbinarizer to convert string genres to binary format</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">algorithm</span><span class="p">,</span> <span class="n">classifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+        <span class="n">algorithm</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+        <span class="n">bow</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mi">7000</span><span class="p">,</span>
+                              <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                              <span class="n">strip_accents</span><span class="o">=</span><span class="s1">&#39;unicode&#39;</span><span class="p">,</span>
+                              <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+        <span class="n">classifier</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([(</span><span class="s1">&#39;vectorizer&#39;</span><span class="p">,</span> <span class="n">bow</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;clf&#39;</span><span class="p">,</span> <span class="n">OneVsRestClassifier</span><span class="p">(</span><span class="n">algorithm</span><span class="p">))])</span>
+
+        <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">documents</span><span class="p">,</span> <span class="n">genreLabels</span><span class="p">)</span>
+
+        <span class="n">bow</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;vectorizer&#39;</span><span class="p">]</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">bow</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">bow</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">sif_feat</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+        <span class="n">sif_feat</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">sif_feat</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">classifier</span><span class="p">,</span> <span class="n">sif_feat</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.predict_SubGenre"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.predict_SubGenre">[docs]</a>    <span class="k">def</span> <span class="nf">predict_SubGenre</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">raw_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Predict the sub genre label(s) on an unstructured text document.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        raw_text : str</span>
+<span class="sd">            The unstructured text document</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        list</span>
+<span class="sd">            A list of classes and their probability distributions</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Given text must have a significant portion as fantasy</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">lblbinarizer</span> <span class="o">=</span> <span class="n">FileManager</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;MultiLabelBinarizer.pickle&quot;</span><span class="p">)</span>
+
+        <span class="n">classifier</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ClassifierType</span><span class="o">.</span><span class="n">MultiClass</span><span class="p">)</span>
+
+        <span class="n">pscores</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([</span><span class="n">raw_text</span><span class="p">])</span>
+        <span class="n">pscores</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">quantize</span><span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1.111&#39;</span><span class="p">),</span>
+                                             <span class="n">rounding</span><span class="o">=</span><span class="n">ROUND_UP</span><span class="p">))</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pscores</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">prob_map</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">lblbinarizer</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">pscores</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">prob_map</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.save"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">classifier</span><span class="p">:</span> <span class="n">ClassifierMixin</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n">ClassifierType</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save the trained classifier for use in prediction</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        classifier : ClassifierMixin</span>
+<span class="sd">            A scikit learn classifier</span>
+<span class="sd">        type : ClassifierType</span>
+<span class="sd">            The type of classifier from the enum :class:`ClassifierType`</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Sklearn classifiers must implement :class:`ClassifierMixin`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">ClassifierType</span><span class="o">.</span><span class="n">BinaryGenres</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;clsf_main_genre.pickle&#39;</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">ClassifierType</span><span class="o">.</span><span class="n">MultiClass</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;clsf_sub_genre.pickle&#39;</span>
+            <span class="k">pass</span>
+
+        <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">pass</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.load"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="n">ClassifierType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassifierMixin</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Load a classifier that has been saved with :func:`save`</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        type : ClassifierType</span>
+<span class="sd">            The type of classifier from the enum :class:`ClassifierType`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ClassifierMixin</span>
+<span class="sd">            A scikit learn classifier</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        * Sklearn classifiers must implement :class:`ClassifierMixin`</span>
+<span class="sd">        * Use the same classifier type as used during saving</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">classifier</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">ClassifierType</span><span class="o">.</span><span class="n">BinaryGenres</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;clsf_main_genre.pickle&#39;</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">ClassifierType</span><span class="o">.</span><span class="n">MultiClass</span><span class="p">:</span>
+            <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;clsf_sub_genre.pickle&#39;</span>
+            <span class="k">pass</span>
+        <span class="n">classifier</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">classifier</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.binary_class_measures"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.binary_class_measures">[docs]</a>    <span class="k">def</span> <span class="nf">binary_class_measures</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">y_true</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Assessment measures of a classification task with binary</span>
+<span class="sd">        classes i.e. Fantasy/Non-Fantasy</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y_true : list</span>
+<span class="sd">            Expected class labels in binary form</span>
+<span class="sd">        y_predicted : list</span>
+<span class="sd">            Predicted class labels in binary form</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        OrderedDict</span>
+<span class="sd">            An ordered dictionary of assessment measures</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">)</span>
+        <span class="n">tp</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="n">tn</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">measures</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">tn</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fp</span> <span class="o">+</span> <span class="n">fn</span> <span class="o">+</span> <span class="n">tn</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;specificity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tn</span> <span class="o">/</span> <span class="p">(</span><span class="n">tn</span> <span class="o">+</span> <span class="n">fp</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;sensitivity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tp</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;precision&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tp</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fp</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;f1score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">tp</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">tp</span> <span class="o">+</span> <span class="n">fp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">measures</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="GenreClassifier.multi_class_measures"><a class="viewcode-back" href="../classification.html#Classification.GenreClassifier.multi_class_measures">[docs]</a>    <span class="k">def</span> <span class="nf">multi_class_measures</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">y_true</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OrderedDict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Assessment measures of a classification task with multiple</span>
+<span class="sd">        classes i.e. multi-label and or multi-class task</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y_true : list</span>
+<span class="sd">            Expected class labels in binary form</span>
+<span class="sd">        y_predicted : list</span>
+<span class="sd">            Predicted class labels in binary form</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        OrderedDict</span>
+<span class="sd">            An ordered dictionary of assessment measures</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">measures</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;coverage error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coverage_error</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;label ranking loss&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">label_ranking_loss</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">)</span>
+        <span class="n">b_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_true</span><span class="p">)</span>
+        <span class="n">b_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y_predicted</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;unsupported hamming loss&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">not_equal</span><span class="p">(</span><span class="n">b_true</span><span class="p">,</span> <span class="n">b_pred</span><span class="p">))</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">b_true</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">measures</span><span class="p">[</span><span class="s1">&#39;label ranking average precision&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">label_ranking_average_precision_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">measures</span></div>
+    <span class="k">pass</span>  <span class="c1"># end of GenreClassifier</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Nathan Zwelibanzi Khupe.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
